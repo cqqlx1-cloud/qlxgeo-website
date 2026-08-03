@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+.leaflet-container {
+
+height:100%;
+width:100%;
+
+}.gis-node{
+
+
+width:28px;
+
+height:28px;
+
+
+background:#2563eb;
+
+
+border-radius:50%;
+
+
+border:3px solid white;
+
+
+animation:pulseGIS 2s infinite;
+
+
+}
+
+
+
+
+
+@keyframes pulseGIS{
+
+
+0%{
+
+
+box-shadow:
+
+0 0 0 0 rgba(37,99,235,.8);
+
+
+}
+
+
+
+70%{
+
+
+box-shadow:
+
+0 0 0 25px rgba(37,99,235,0);
+
+
+}
+
+
+
+100%{
+
+
+box-shadow:
+
+0 0 0 0 rgba(37,99,235,0);
+
+
+}
+
+
+}.leaflet-container {
+  background:#111827;
+}
+
+.leaflet-tile {
+  filter:none;
+}
+html{
+scroll-behavior:smooth;
+}
