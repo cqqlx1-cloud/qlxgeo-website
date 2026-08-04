@@ -9,7 +9,7 @@ const products = [
 {
 title:"GNSS RTK",
 desc:"High precision GNSS RTK receivers for surveying, mapping and construction applications.",
-image:"/products/gnss-rtk.jpg"
+image:"/products/gnss-rtk.png"
 },
 
 {
@@ -21,7 +21,7 @@ image:"/products/total-station.jpg"
 {
 title:"LiDAR Scanner",
 desc:"Advanced 3D laser scanning technology for reality capture and digital mapping.",
-image:"/products/lidar.jpg"
+image:"/products/lidar.png"
 },
 
 {
@@ -221,16 +221,23 @@ height={200}
 */}
 
 
-<span
+<Image
+
+src={item.image}
+
+alt={item.title}
+
+width={400}
+
+height={250}
+
 className="
-text-gray-400
-text-sm
+w-full
+h-full
+object-contain
 "
->
 
-Product Image
-
-</span>
+/>
 
 
 </div>
