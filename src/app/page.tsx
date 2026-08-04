@@ -1,106 +1,93 @@
 import Image from "next/image";
 
 
-export default function Home(){
-
-
 const products = [
-
-{
-title:"GNSS RTK",
-desc:"High precision GNSS RTK receivers for surveying, mapping and construction applications.",
-image:"/products/gnss-rtk.png"
-},
-
-{
-title:"Total Station",
-desc:"Professional total station solutions for engineering and land surveying.",
-image:"/products/total-station.jpg"
-},
-
-{
-title:"LiDAR Scanner",
-desc:"Advanced 3D laser scanning technology for reality capture and digital mapping.",
-image:"/products/lidar.png"
-},
-
-{
-title:"UAV Mapping",
-desc:"Drone mapping solutions for aerial surveying and geospatial data collection.",
-image:"/products/uav.jpg"
-}
-
+  {
+    name:"GNSS RTK",
+    image:"/products/gnss-rtk.png",
+    desc:"High precision GNSS receiver with multi-frequency positioning and IMU tilt survey."
+  },
+  {
+    name:"Total Station",
+    image:"/products/total-station.jpg",
+    desc:"Professional total station for construction, mapping and engineering projects."
+  },
+  {
+    name:"LiDAR Scanner",
+    image:"/products/lidar.png",
+    desc:"Advanced LiDAR solution for 3D scanning and spatial data collection."
+  },
+  {
+    name:"UAV Mapping",
+    image:"/products/uav.jpg",
+    desc:"Professional drone mapping solutions for surveying and GIS applications."
+  }
 ];
 
 
 
+export default function Home(){
+
+
 return (
 
-<main className="bg-white">
-
+<main className="bg-black text-white">
 
 
 {/* HERO */}
 
-<section
-className="
-bg-black
-text-white
-pt-32
-pb-24
-"
->
+<section className="
+min-h-screen
+flex
+items-center
+px-8
+lg:px-20
+py-20
+">
 
 
-<div
-className="
-max-w-7xl
-mx-auto
-px-6
+<div className="
 grid
-md:grid-cols-2
+lg:grid-cols-2
 gap-12
 items-center
-"
->
+w-full
+">
 
 
+{/* LEFT */}
 
 <div>
 
 
-<h1
-className="
+<h1 className="
 text-5xl
-md:text-6xl
+lg:text-7xl
 font-bold
 leading-tight
-"
->
+">
 
-Professional Surveying Equipment
+Professional Surveying
+<br/>
+
+Equipment
 
 <br/>
 
 <span className="text-blue-500">
-
 For A Smarter World
-
 </span>
 
 
 </h1>
 
 
-
-<p
-className="
+<p className="
 mt-8
-text-lg
 text-gray-300
-leading-relaxed
-"
->
+text-lg
+max-w-xl
+">
 
 QLXGEO supplies high precision GNSS RTK,
 Total Station, LiDAR and surveying equipment
@@ -110,13 +97,11 @@ for customers worldwide.
 
 
 
-<div
-className="
+<div className="
+mt-10
 flex
 gap-5
-mt-10
-"
->
+">
 
 
 <a
@@ -124,8 +109,9 @@ href="/products"
 className="
 bg-blue-600
 px-8
-py-3
+py-4
 rounded-lg
+font-semibold
 hover:bg-blue-700
 "
 >
@@ -142,10 +128,9 @@ className="
 border
 border-gray-500
 px-8
-py-3
+py-4
 rounded-lg
-hover:bg-white
-hover:text-black
+font-semibold
 "
 >
 
@@ -163,77 +148,71 @@ Contact Us
 
 
 
-
-
-{/* PRODUCT DISPLAY */}
+{/* RIGHT PRODUCT SHOWCASE */}
 
 
 <div
 className="
+bg-zinc-900
+rounded-3xl
+p-8
+border
+border-zinc-800
+"
+>
+
+
+<div className="
+text-center
+mb-6
+text-gray-300
+">
+
+QLXGEO Professional Solutions
+
+</div>
+
+
+
+<div className="
 grid
 grid-cols-2
 gap-5
-"
->
+">
 
 
-{
-
-products.map((item)=>(
+{products.map((item)=>(
 
 
 <div
-key={item.title}
+key={item.name}
 className="
-bg-gray-900
-rounded-2xl
-p-5
-border
-border-gray-800
-"
->
-
-
-
-<div
-className="
-h-32
+bg-zinc-800
 rounded-xl
-bg-gray-800
-flex
-items-center
-justify-center
-overflow-hidden
+p-4
+hover:scale-105
+transition
 "
 >
 
 
-{/* 
-以后放真实产品图片
-
-<Image
-src={item.image}
-alt={item.title}
-width={300}
-height={200}
-/>
-
-*/}
+<div
+className="
+relative
+h-32
+"
+>
 
 
 <Image
 
 src={item.image}
 
-alt={item.title}
+alt={item.name}
 
-width={400}
-
-height={250}
+fill
 
 className="
-w-full
-h-full
 object-contain
 "
 
@@ -244,46 +223,27 @@ object-contain
 
 
 
-
-<h3
-className="
-mt-4
-font-bold
+<h3 className="
+mt-3
+font-semibold
 text-lg
-"
->
+">
 
-{item.title}
+{item.name}
 
 </h3>
 
 
+</div>
 
-<p
-className="
-text-sm
-text-gray-400
-mt-2
-"
->
 
-{item.desc}
-
-</p>
-
+))}
 
 
 </div>
 
 
-))
-
-}
-
-
-
 </div>
-
 
 
 
@@ -291,8 +251,6 @@ mt-2
 
 
 </section>
-
-
 
 
 
@@ -305,16 +263,10 @@ mt-2
 
 <section
 className="
+px-8
+lg:px-20
 py-20
-"
->
-
-
-<div
-className="
-max-w-7xl
-mx-auto
-px-6
+bg-zinc-950
 "
 >
 
@@ -327,7 +279,7 @@ text-center
 "
 >
 
-Our Products
+Featured Products
 
 </h2>
 
@@ -335,13 +287,13 @@ Our Products
 
 <p
 className="
+text-gray-400
 text-center
-text-gray-600
 mt-4
 "
 >
 
-Professional surveying instruments for global markets.
+Professional geospatial equipment solutions
 
 </p>
 
@@ -351,65 +303,79 @@ Professional surveying instruments for global markets.
 <div
 className="
 grid
-md:grid-cols-4
+md:grid-cols-2
+lg:grid-cols-4
 gap-8
 mt-12
 "
 >
 
 
-{
-
-products.map((item)=>(
+{products.map((item)=>(
 
 
 <div
-key={item.title}
+
+key={item.name}
+
 className="
+bg-zinc-900
+rounded-2xl
+overflow-hidden
 border
-rounded-xl
-p-6
-hover:shadow-xl
-transition
+border-zinc-800
 "
+
 >
 
 
 <div
 className="
-h-44
-bg-gray-100
-rounded-lg
-flex
-items-center
-justify-center
+relative
+h-56
+bg-white
 "
 >
 
-{item.title}
+
+<Image
+
+src={item.image}
+
+alt={item.name}
+
+fill
+
+className="
+object-contain
+"
+
+/>
+
 
 </div>
 
 
 
+<div className="p-6">
+
+
 <h3
 className="
-mt-5
-font-bold
 text-xl
+font-bold
 "
 >
 
-{item.title}
+{item.name}
 
 </h3>
 
 
-
 <p
 className="
+text-gray-400
 mt-3
-text-gray-600
 text-sm
 "
 >
@@ -421,12 +387,15 @@ text-sm
 
 
 <a
+
 href="/contact"
+
 className="
 inline-block
 mt-5
-text-blue-600
+text-blue-400
 "
+
 >
 
 Inquiry →
@@ -434,187 +403,30 @@ Inquiry →
 </a>
 
 
-
 </div>
 
-
-))
-
-}
 
 
 </div>
 
 
+))}
+
+
 </div>
+
 
 
 </section>
 
 
-
-
-
-
-
-
-{/* ADVANTAGE */}
-
-
-
-<section
-className="
-bg-gray-100
-py-20
-"
->
-
-
-<div
-className="
-max-w-7xl
-mx-auto
-px-6
-"
->
-
-
-<h2
-className="
-text-4xl
-font-bold
-text-center
-"
->
-
-Why Choose QLXGEO
-
-</h2>
-
-
-
-<div
-className="
-grid
-md:grid-cols-4
-gap-6
-mt-12
-"
->
-
-
-{
-
-[
-"OEM / ODM Support",
-"Competitive Pricing",
-"Global Shipping",
-"Technical Support"
-].map(item=>(
-
-
-<div
-key={item}
-className="
-bg-white
-rounded-xl
-p-8
-text-center
-font-semibold
-"
->
-
-{item}
-
-</div>
-
-
-))
-
-}
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-{/* CTA */}
-
-
-
-<section
-className="
-bg-blue-600
-text-white
-py-20
-text-center
-"
->
-
-
-<h2
-className="
-text-4xl
-font-bold
-"
->
-
-Looking For Surveying Equipment?
-
-</h2>
-
-
-
-<p
-className="
-mt-5
-text-lg
-"
->
-
-Contact QLXGEO for quotation and technical support.
-
-</p>
-
-
-
-<a
-href="/contact"
-className="
-inline-block
-mt-8
-bg-white
-text-blue-600
-px-10
-py-3
-rounded-lg
-"
->
-
-Send Inquiry
-
-</a>
-
-
-
-</section>
 
 
 
 </main>
 
-)
+
+);
 
 
 }
