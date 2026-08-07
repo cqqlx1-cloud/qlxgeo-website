@@ -3,165 +3,158 @@
 import Link from "next/link";
 
 
-const productData:any={
+const productData:any = {
 
 
 "gnss-rtk":{
 
 
-title:{
-en:"Leica GNSS RTK",
-es:"Leica GNSS RTK",
-pt:"Leica GNSS RTK",
-fr:"Leica GNSS RTK",
-ar:"Leica GNSS RTK"
-},
+title:"Leica GNSS RTK Solutions",
+
+subtitle:
+"High Precision GNSS Positioning Equipment",
+
+image:
+"/products/leica-gnss.jpg",
 
 
-description:{
+description:
 
-en:"Professional Leica GNSS RTK positioning solutions for surveying, construction and engineering projects worldwide.",
-
-es:"Soluciones profesionales Leica GNSS RTK para topografía, construcción e ingeniería.",
-
-pt:"Soluções profissionais Leica GNSS RTK para levantamento, construção e engenharia.",
-
-fr:"Solutions professionnelles Leica GNSS RTK pour l'arpentage, la construction et l'ingénierie.",
-
-ar:"حلول Leica GNSS RTK الاحترافية للمساحة والبناء والمشاريع الهندسية."
-
-},
+"Professional Leica GNSS RTK solutions for surveying, construction, engineering and GIS projects worldwide.",
 
 
-image:"/products/leica-gnss.jpg",
 
+features:[
 
-features:{
-
-
-en:[
 "Centimeter-level positioning accuracy",
+
+"Multi-constellation GNSS support",
+
 "Real-time RTK correction technology",
-"Professional surveying workflow",
-"Support global engineering projects"
+
+"Professional field surveying workflow"
+
 ],
 
 
-es:[
-"Precisión de posicionamiento centimétrica",
-"Tecnología RTK en tiempo real",
-"Flujo profesional de topografía",
-"Soporte para proyectos globales"
+applications:[
+
+"Land Surveying",
+
+"Construction",
+
+"Road Engineering",
+
+"Mining",
+
+"GIS Mapping"
+
 ],
 
 
-pt:[
-"Precisão de posicionamento centimétrica",
-"Tecnologia RTK em tempo real",
-"Fluxo profissional de levantamento",
-"Suporte para projetos globais"
+specs:[
+
+["Positioning Accuracy","Centimeter Level"],
+
+["GNSS Support","GPS / GLONASS / Galileo / BeiDou"],
+
+["Correction","RTK Network / Base Station"],
+
+["Application","Surveying & Engineering"]
+
 ],
 
 
-fr:[
-"Précision de positionnement centimétrique",
-"Technologie RTK en temps réel",
-"Flux professionnel d'arpentage",
-"Support des projets mondiaux"
+faq:[
+
+[
+"Do you supply Leica GNSS RTK worldwide?",
+"Yes. QLXGEO provides professional surveying equipment solutions for global customers."
 ],
 
 
-ar:[
-"دقة تحديد المواقع على مستوى السنتيمتر",
-"تقنية RTK في الوقت الحقيقي",
-"حلول مساحية احترافية",
-"دعم المشاريع العالمية"
+[
+"Can you support OEM and distributors?",
+"Yes. We provide flexible cooperation solutions for global partners."
 ]
 
 
-}
+]
+
 
 
 },
-
-
 
 
 
 "total-station":{
 
 
-title:{
-en:"Leica Total Station",
-es:"Leica Estación Total",
-pt:"Estação Total Leica",
-fr:"Station Totale Leica",
-ar:"محطة Leica الشاملة"
-},
+title:"Leica Total Station",
+
+subtitle:
+"Professional High Precision Surveying Equipment",
 
 
-description:{
-
-en:"High precision Leica total station solutions for construction, infrastructure and land surveying.",
-
-es:"Soluciones Leica de estación total para construcción e ingeniería.",
-
-pt:"Soluções Leica de estação total para construção e engenharia.",
-
-fr:"Solutions Leica de station totale pour la construction et l'ingénierie.",
-
-ar:"حلول Leica للمحطات الشاملة للمشاريع الهندسية."
-
-},
+image:
+"/products/leica-total-station.jpg",
 
 
-image:"/products/leica-total-station.jpg",
+
+description:
+
+"High precision Leica total station solutions for construction, infrastructure and land surveying.",
 
 
-features:{
 
+features:[
 
-en:[
 "High precision angle measurement",
-"Fast distance measurement",
-"Reliable field performance",
-"Professional engineering applications"
+
+"Fast EDM distance measurement",
+
+"Reliable field operation",
+
+"Professional engineering workflow"
+
 ],
 
-es:[
-"Medición angular de alta precisión",
-"Medición rápida de distancia",
-"Rendimiento fiable en campo",
-"Aplicaciones profesionales"
+
+applications:[
+
+"Construction",
+
+"Infrastructure",
+
+"Building Survey",
+
+"Industrial Measurement"
+
 ],
 
-pt:[
-"Medição angular de alta precisão",
-"Medição rápida de distância",
-"Desempenho confiável em campo",
-"Aplicações profissionais"
+
+specs:[
+
+["Measurement","High Precision EDM"],
+
+["Accuracy","Professional Survey Grade"],
+
+["Workflow","Engineering Survey"]
+
 ],
 
-fr:[
-"Mesure angulaire haute précision",
-"Mesure rapide des distances",
-"Performance fiable sur le terrain",
-"Applications professionnelles"
-],
 
-ar:[
-"قياس زاوي عالي الدقة",
-"قياس سريع للمسافة",
-"أداء موثوق في الموقع",
-"تطبيقات هندسية احترافية"
+faq:[
+
+[
+"What projects use Leica Total Station?",
+"Construction, infrastructure and professional surveying projects."
+]
+
 ]
 
 
-}
-
-
 },
-
 
 
 
@@ -169,77 +162,64 @@ ar:[
 "lidar":{
 
 
-title:{
-en:"Leica BLK 3D Laser Scanner",
-es:"Escáner Láser Leica BLK 3D",
-pt:"Scanner Laser Leica BLK 3D",
-fr:"Scanner Laser Leica BLK 3D",
-ar:"ماسح الليزر Leica BLK 3D"
-},
+title:"Leica 3D Laser Scanner",
+
+subtitle:
+"Advanced Reality Capture Solutions",
 
 
-description:{
-
-en:"Advanced 3D reality capture solutions for digital mapping and spatial data collection.",
-
-es:"Soluciones avanzadas de captura 3D para cartografía digital.",
-
-pt:"Soluções avançadas de captura 3D para mapeamento digital.",
-
-fr:"Solutions avancées de capture 3D pour la cartographie numérique.",
-
-ar:"حلول متقدمة للمسح ثلاثي الأبعاد والخرائط الرقمية."
-
-},
+image:
+"/products/leica-blk.png",
 
 
-image:"/products/leica-blk.png",
+description:
+
+"Professional 3D scanning solutions for digital mapping and spatial data capture.",
 
 
-features:{
+features:[
 
+"Fast 3D scanning",
 
-en:[
-"High speed 3D scanning",
 "Reality capture technology",
+
 "Digital twin applications",
-"Professional mapping workflow"
+
+"High accuracy spatial data"
+
 ],
 
 
-fr:[
-"Numérisation 3D haute vitesse",
-"Technologie Reality Capture",
-"Applications jumeaux numériques",
-"Flux professionnel de cartographie"
+applications:[
+
+"3D Mapping",
+
+"Smart City",
+
+"Architecture",
+
+"Engineering"
+
 ],
 
 
-es:[
-"Escaneo 3D de alta velocidad",
-"Tecnología de captura digital",
-"Aplicaciones de gemelos digitales",
-"Flujo profesional de cartografía"
+specs:[
+
+["Technology","3D Laser Scanning"],
+
+["Application","Reality Capture"]
+
 ],
 
 
-pt:[
-"Digitalização 3D rápida",
-"Tecnologia Reality Capture",
-"Aplicações digitais",
-"Fluxo profissional de mapeamento"
-],
+faq:[
 
-
-ar:[
-"مسح ثلاثي الأبعاد عالي السرعة",
-"تقنية التقاط الواقع",
-"تطبيقات التوأم الرقمي",
-"حلول الخرائط الاحترافية"
+[
+"Can laser scanning data be used for GIS?",
+"Yes. Data can be integrated into professional GIS workflows."
 ]
 
-
-}
+]
 
 
 },
@@ -251,80 +231,68 @@ ar:[
 "uav":{
 
 
-title:{
-en:"Leica UAV Mapping",
-es:"Mapeo UAV Leica",
-pt:"Mapeamento UAV Leica",
-fr:"Cartographie UAV Leica",
-ar:"رسم الخرائط بالطائرات بدون طيار Leica"
-},
+title:"Leica UAV Mapping Solutions",
+
+subtitle:
+"Aerial Surveying And Mapping Technology",
 
 
-description:{
-
-en:"Professional UAV mapping solutions for large scale surveying and GIS projects.",
-
-es:"Soluciones profesionales UAV para proyectos GIS y topografía.",
-
-pt:"Soluções profissionais UAV para projetos GIS.",
-
-fr:"Solutions professionnelles UAV pour les projets SIG.",
-
-ar:"حلول UAV الاحترافية لمشاريع GIS والمساحة."
-
-},
+image:
+"/products/leica-uav.png",
 
 
-image:"/products/leica-uav.png",
+description:
+
+"Professional UAV mapping solutions for large-scale surveying and GIS applications.",
 
 
-features:{
+features:[
 
+"Aerial mapping workflow",
 
-en:[
-"Aerial surveying workflow",
-"Large area mapping",
-"High resolution data capture",
+"Large area data capture",
+
+"High resolution imagery",
+
 "GIS integration support"
+
 ],
 
 
-es:[
-"Flujo de topografía aérea",
-"Mapeo de grandes áreas",
-"Captura de datos HD",
-"Soporte GIS"
+applications:[
+
+"Topographic Mapping",
+
+"Mining",
+
+"Land Development",
+
+"GIS Projects"
+
 ],
 
 
-pt:[
-"Fluxo de levantamento aéreo",
-"Mapeamento de grandes áreas",
-"Captura de dados alta resolução",
-"Integração GIS"
+specs:[
+
+["Workflow","Aerial Survey"],
+
+["Output","GIS Mapping Data"]
+
 ],
 
 
-fr:[
-"Flux aérien professionnel",
-"Cartographie grande surface",
-"Collecte haute résolution",
-"Support SIG"
-],
+faq:[
 
+[
+"What industries use UAV mapping?",
+"Surveying, mining, construction and GIS industries."
+]
 
-ar:[
-"مسح جوي احترافي",
-"رسم خرائط للمناطق الكبيرة",
-"جمع بيانات عالية الدقة",
-"دعم تكامل GIS"
 ]
 
 
 }
 
-
-}
 
 
 };
@@ -337,44 +305,50 @@ export default function ProductDetail({
 
 language="en",
 
-product
+product="gnss-rtk"
+
 
 }:{
 
-language:string;
+language?:string;
 
 product:string;
 
+
 }){
+
 
 
 const data =
 productData[product] || productData["gnss-rtk"];
 
 
-const lang =
-language as keyof typeof data.title;
-
-
 
 return (
+
 
 
 <main className="
 bg-black
 text-white
 min-h-screen
+pt-32
 px-8
 lg:px-20
-pt-32
 pb-24
 ">
 
 
-<div className="max-w-7xl mx-auto">
-
-
 <div className="
+max-w-7xl
+mx-auto
+">
+
+
+{/* HERO */}
+
+
+<section className="
 grid
 lg:grid-cols-2
 gap-16
@@ -402,9 +376,21 @@ font-bold
 mt-6
 ">
 
-{data.title[lang]}
+{data.title}
 
 </h1>
+
+
+
+<h2 className="
+text-2xl
+text-gray-300
+mt-5
+">
+
+{data.subtitle}
+
+</h2>
 
 
 
@@ -412,9 +398,10 @@ mt-6
 text-gray-400
 text-lg
 mt-8
+leading-relaxed
 ">
 
-{data.description[lang]}
+{data.description}
 
 </p>
 
@@ -431,6 +418,7 @@ bg-blue-600
 px-8
 py-4
 rounded-xl
+font-semibold
 "
 
 >
@@ -440,16 +428,18 @@ Request Quote
 </Link>
 
 
+
 </div>
+
 
 
 
 
 <div className="
 bg-zinc-900
+rounded-3xl
 border
 border-white/10
-rounded-3xl
 p-10
 h-[450px]
 flex
@@ -462,7 +452,7 @@ justify-center
 
 src={data.image}
 
-alt={data.title[lang]}
+alt={data.title}
 
 className="
 max-h-full
@@ -475,10 +465,14 @@ object-contain
 </div>
 
 
-</div>
+
+</section>
 
 
 
+
+
+{/* FEATURES */}
 
 
 <section className="mt-24">
@@ -489,9 +483,10 @@ text-4xl
 font-bold
 ">
 
-Key Features
+Key Advantages
 
 </h2>
+
 
 
 <div className="
@@ -503,13 +498,11 @@ mt-10
 ">
 
 
-{
-data.features[lang]?.map((item:string)=>(
-
+{data.features.map((x:string)=>(
 
 <div
 
-key={item}
+key={x}
 
 className="
 bg-zinc-900
@@ -521,13 +514,71 @@ p-6
 
 >
 
-{item}
+{x}
 
 </div>
 
 
-))
-}
+))}
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+{/* APPLICATION */}
+
+
+<section className="mt-24">
+
+
+<h2 className="
+text-4xl
+font-bold
+">
+
+Applications
+
+</h2>
+
+
+<div className="
+flex
+flex-wrap
+gap-4
+mt-8
+">
+
+
+{data.applications.map((x:string)=>(
+
+<span
+
+key={x}
+
+className="
+bg-blue-600/20
+border
+border-blue-500/30
+px-6
+py-3
+rounded-xl
+"
+
+>
+
+{x}
+
+</span>
+
+
+))}
 
 
 
@@ -538,6 +589,204 @@ p-6
 
 
 
+
+
+
+
+{/* SPEC */}
+
+
+<section className="mt-24">
+
+
+<h2 className="
+text-4xl
+font-bold
+">
+
+Technical Specifications
+
+</h2>
+
+
+<div className="
+mt-8
+overflow-hidden
+rounded-2xl
+border
+border-white/10
+">
+
+
+{data.specs.map((x:string[])=>(
+<div
+
+key={x[0]}
+
+className="
+grid
+grid-cols-2
+bg-zinc-900
+border-b
+border-white/10
+p-5
+"
+
+>
+
+<div>{x[0]}</div>
+
+<div className="text-gray-400">
+{x[1]}
+</div>
+
+
+</div>
+))}
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+{/* FAQ */}
+
+
+<section className="mt-24">
+
+
+<h2 className="
+text-4xl
+font-bold
+">
+
+FAQ
+
+</h2>
+
+
+
+<div className="
+space-y-6
+mt-10
+">
+
+
+{data.faq.map((x:string[])=>(
+<div
+
+key={x[0]}
+
+className="
+bg-zinc-900
+rounded-2xl
+p-6
+"
+
+>
+
+<h3 className="
+text-xl
+font-bold
+">
+
+{x[0]}
+
+</h3>
+
+
+<p className="
+text-gray-400
+mt-3
+">
+
+{x[1]}
+
+</p>
+
+
+</div>
+
+))}
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+{/* CTA */}
+
+
+<section className="
+mt-24
+bg-zinc-900
+rounded-3xl
+p-12
+text-center
+">
+
+
+<h2 className="
+text-4xl
+font-bold
+">
+
+Need Professional Surveying Equipment?
+
+</h2>
+
+
+
+<p className="
+text-gray-400
+mt-5
+">
+
+Contact QLXGEO for Leica geospatial solutions.
+
+</p>
+
+
+
+<Link
+
+href={`/${language}/contact`}
+
+className="
+inline-block
+mt-8
+bg-blue-600
+px-10
+py-4
+rounded-xl
+"
+
+>
+
+Request Quote
+
+</Link>
+
+
+
+</section>
+
+
+
+
 </div>
 
 
@@ -545,6 +794,5 @@ p-6
 
 
 );
-
 
 }
