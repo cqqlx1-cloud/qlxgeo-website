@@ -1,96 +1,64 @@
-import type { Metadata } from "next";
-
-
-export const metadata: Metadata = {
-
-title:
-"UAV Mapping System Supplier | QLXGEO Survey Equipment",
-
-
-description:
-"QLXGEO provides professional UAV mapping systems for aerial surveying, photogrammetry, 3D mapping and large area data collection worldwide.",
-
-
-keywords:[
-
-"UAV Mapping System",
-
-"Survey Drone",
-
-"Drone Photogrammetry",
-
-"Aerial Survey Equipment",
-
-"UAV LiDAR Mapping"
-
-]
-
-};
-
-
+import Image from "next/image";
+import Link from "next/link";
+import Downloads from "../../components/Downloads";
+import RelatedProducts from "../../components/RelatedProducts";
 
 export default function UAV(){
 
 
 return (
 
-<main
-
-className="
-min-h-screen
-bg-slate-950
-text-white
-pt-32
-px-8
-"
-
->
+<main className="bg-black text-white">
 
 
 {/* HERO */}
 
-
 <section
 
 className="
-max-w-7xl
-mx-auto
+pt-32
+px-8
+lg:px-20
+py-24
 grid
-md:grid-cols-2
-gap-12
+lg:grid-cols-2
+gap-16
 items-center
 "
 
 >
 
 
-{/* IMAGE */}
-
-
 <div
 
 className="
-h-[520px]
+relative
+h-[600px]
+bg-zinc-900
 rounded-3xl
-bg-slate-900
-border
-border-white/10
 overflow-hidden
+border
+border-zinc-800
 "
 
 >
 
 
-<img
+<Image
 
-src="/products/uav.jpg"
+src="/products/uav.png"
 
-alt="UAV Mapping System"
+alt="Leica UAV Mapping Solution"
+
+fill
+
+priority
+
+sizes="50vw"
 
 className="
-w-full
-h-full
 object-contain
+p-10
 "
 
 />
@@ -104,26 +72,22 @@ object-contain
 
 
 
-{/* INFO */}
-
-
 <div>
 
 
 <p
 
 className="
-text-blue-400
-tracking-[0.3em]
-text-sm
+text-blue-500
+text-lg
+mb-5
 "
 
 >
 
-SURVEYING EQUIPMENT
+LEICA GEOSPATIAL SOLUTIONS
 
 </p>
-
 
 
 
@@ -132,14 +96,15 @@ SURVEYING EQUIPMENT
 
 className="
 text-5xl
+lg:text-6xl
 font-bold
-mt-5
 leading-tight
 "
 
 >
 
-Professional UAV Mapping System
+Leica UAV Mapping
+Solutions
 
 </h1>
 
@@ -150,17 +115,17 @@ Professional UAV Mapping System
 <p
 
 className="
-mt-6
+mt-8
+text-gray-400
 text-xl
-text-slate-300
 leading-relaxed
 "
 
 >
 
-Drone surveying solution for aerial mapping,
-photogrammetry, 3D terrain modeling and
-large-scale data collection.
+Professional aerial mapping solutions
+for surveying, inspection and
+large-scale geospatial projects.
 
 </p>
 
@@ -168,63 +133,27 @@ large-scale data collection.
 
 
 
-
-<div
-
-className="
-mt-8
-flex
-gap-4
-"
-
->
-
-
-<a
+<Link
 
 href="/contact"
 
 className="
+inline-block
+mt-10
 bg-blue-600
-px-8
+px-10
 py-4
-rounded-xl
+rounded-lg
+font-semibold
 hover:bg-blue-700
-transition
 "
 
 >
 
-Request Quote
+Request Leica Solution
 
-</a>
+</Link>
 
-
-
-
-
-<a
-
-href="https://wa.me/8618983894451"
-
-className="
-border
-border-green-500
-text-green-400
-px-8
-py-4
-rounded-xl
-"
-
->
-
-WhatsApp
-
-</a>
-
-
-
-</div>
 
 
 </div>
@@ -240,16 +169,17 @@ WhatsApp
 
 
 
-{/* FEATURES */}
+{/* OVERVIEW */}
 
 
 
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
+px-8
+lg:px-20
+py-24
+bg-zinc-950
 "
 
 >
@@ -258,13 +188,13 @@ mt-24
 <h2
 
 className="
-text-3xl
+text-4xl
 font-bold
 "
 
 >
 
-Key Features
+01 Overview
 
 </h2>
 
@@ -272,51 +202,25 @@ Key Features
 
 
 
-<div
+<p
 
 className="
-grid
-md:grid-cols-2
-gap-6
-mt-8
+mt-6
+max-w-4xl
+text-gray-400
+text-lg
+leading-relaxed
 "
 
 >
 
+QLXGEO provides professional Leica UAV
+mapping solutions combining aerial
+data acquisition, photogrammetry and
+geospatial workflows for modern surveying.
 
-<Feature
+</p>
 
-text="High resolution aerial mapping"
-
-/>
-
-
-
-<Feature
-
-text="Professional photogrammetry workflow"
-
-/>
-
-
-
-<Feature
-
-text="Large area survey capability"
-
-/>
-
-
-
-<Feature
-
-text="3D terrain modeling support"
-
-/>
-
-
-
-</div>
 
 
 </section>
@@ -336,9 +240,9 @@ text="3D terrain modeling support"
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
+px-8
+lg:px-20
+py-24
 "
 
 >
@@ -347,15 +251,16 @@ mt-24
 <h2
 
 className="
-text-3xl
+text-4xl
 font-bold
 "
 
 >
 
-Technical Specifications
+02 Key Specifications
 
 </h2>
+
 
 
 
@@ -367,70 +272,109 @@ className="
 grid
 md:grid-cols-2
 gap-6
-mt-8
+mt-10
 "
 
 >
 
 
 
-<Spec
-
-name="Flight Time"
-
-value="30-60 Minutes"
-
-/>
 
 
-
-<Spec
-
-name="Camera"
-
-value="High Resolution Mapping Camera"
-
-/>
+<div className="bg-zinc-900 p-8 rounded-2xl">
 
 
+<h3 className="text-xl font-bold">
 
-<Spec
+Aerial Mapping
 
-name="Accuracy"
+</h3>
 
-value="Centimeter Level Mapping"
 
-/>
+<p className="mt-3 text-gray-400">
+
+High resolution aerial data collection
+
+</p>
+
+
+</div>
 
 
 
-<Spec
-
-name="Mapping Area"
-
-value="Large Scale Survey Coverage"
-
-/>
 
 
 
-<Spec
 
-name="Data Output"
-
-value="Orthophoto / 3D Model / Point Cloud"
-
-/>
+<div className="bg-zinc-900 p-8 rounded-2xl">
 
 
+<h3 className="text-xl font-bold">
 
-<Spec
+Data Processing
 
-name="Platform"
+</h3>
 
-value="Professional Survey UAV"
 
-/>
+<p className="mt-3 text-gray-400">
+
+Professional photogrammetry workflow
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div className="bg-zinc-900 p-8 rounded-2xl">
+
+
+<h3 className="text-xl font-bold">
+
+Accuracy
+
+</h3>
+
+
+<p className="mt-3 text-gray-400">
+
+Survey grade mapping results
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div className="bg-zinc-900 p-8 rounded-2xl">
+
+
+<h3 className="text-xl font-bold">
+
+Integration
+
+</h3>
+
+
+<p className="mt-3 text-gray-400">
+
+GIS and engineering project integration
+
+</p>
+
+
+</div>
+
 
 
 
@@ -454,9 +398,10 @@ value="Professional Survey UAV"
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
+px-8
+lg:px-20
+py-24
+bg-zinc-950
 "
 
 >
@@ -465,13 +410,13 @@ mt-24
 <h2
 
 className="
-text-3xl
+text-4xl
 font-bold
 "
 
 >
 
-Applications
+03 Applications
 
 </h2>
 
@@ -483,43 +428,37 @@ Applications
 
 className="
 grid
-md:grid-cols-4
+md:grid-cols-3
 gap-6
-mt-8
+mt-10
 "
 
 >
 
 
-<Application
+<div className="bg-zinc-900 p-8 rounded-2xl">
 
-name="Topographic Survey"
+Topographic Mapping
 
-/>
-
-
-
-<Application
-
-name="Mining"
-
-/>
+</div>
 
 
 
-<Application
 
-name="Agriculture"
+<div className="bg-zinc-900 p-8 rounded-2xl">
 
-/>
+Mining Survey
+
+</div>
 
 
 
-<Application
 
-name="Infrastructure"
+<div className="bg-zinc-900 p-8 rounded-2xl">
 
-/>
+Infrastructure Inspection
+
+</div>
 
 
 
@@ -536,17 +475,18 @@ name="Infrastructure"
 
 
 
-{/* FAQ */}
+{/* CTA */}
 
 
 
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
-pb-20
+px-8
+lg:px-20
+py-24
+text-center
+bg-zinc-900
 "
 
 >
@@ -555,301 +495,69 @@ pb-20
 <h2
 
 className="
-text-3xl
+text-5xl
 font-bold
 "
 
 >
 
-Frequently Asked Questions
+Need Leica UAV Solution?
 
 </h2>
 
 
 
 
-
-<div
+<p
 
 className="
-mt-8
-space-y-5
+mt-5
+text-gray-400
 "
 
 >
 
+Contact QLXGEO for professional
+aerial mapping solutions.
 
-<FAQ
-
-q="What is UAV mapping used for?"
-
-a="UAV mapping is used for aerial surveying, photogrammetry, terrain modeling and large area data collection."
-
-/>
+</p>
 
 
 
 
 
-<FAQ
+<Link
 
-q="How accurate is drone surveying?"
+href="/contact"
 
-a="Professional survey drones can achieve high precision mapping with RTK positioning technology."
+className="
+inline-block
+mt-10
+bg-blue-600
+px-10
+py-4
+rounded-lg
+font-semibold
+"
 
-/>
+>
 
+Contact Us
 
+</Link>
 
-
-
-<FAQ
-
-q="Can QLXGEO provide customized UAV solutions?"
-
-a="Yes, QLXGEO supports customized surveying solutions for different applications."
-
-/>
-
-
-
-</div>
 
 
 </section>
 
 
+<Downloads />
+
+<RelatedProducts />
 
 </main>
 
-)
+);
 
-}
-
-
-
-
-
-
-
-
-
-function Feature({
-
-text
-
-}:{
-
-text:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-"
-
->
-
-✓ {text}
-
-</div>
-
-
-)
-
-}
-
-
-
-
-
-
-
-
-
-function Spec({
-
-name,
-value
-
-}:{
-
-name:string
-value:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-"
-
->
-
-
-<p
-
-className="
-text-blue-400
-"
-
->
-
-{name}
-
-</p>
-
-
-
-<p
-
-className="
-mt-3
-text-lg
-"
-
->
-
-{value}
-
-</p>
-
-
-</div>
-
-
-)
-
-}
-
-
-
-
-
-
-
-
-
-function Application({
-
-name
-
-}:{
-
-name:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-text-center
-"
-
->
-
-{name}
-
-</div>
-
-
-)
-
-}
-
-
-
-
-
-
-
-
-
-function FAQ({
-
-q,
-a
-
-}:{
-
-q:string
-a:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-"
-
->
-
-
-<h3
-
-className="
-font-bold
-"
-
->
-
-{q}
-
-</h3>
-
-
-
-<p
-
-className="
-mt-3
-text-slate-300
-"
-
->
-
-{a}
-
-</p>
-
-
-
-</div>
-
-
-)
 
 }

@@ -1,62 +1,186 @@
-export default function Contact(){
+"use client";
+
+
+import {useState} from "react";
+
+import languages from "../../locales";
+
+
+
+export default function Contact({
+
+language="en"
+
+}:{
+
+language?:string
+
+}){
+
+
+const t =
+languages[language as keyof typeof languages]
+??
+languages.en;
+
+console.log(
+"CURRENT LANGUAGE:",
+language
+);
+
+
+console.log(
+"TITLE:",
+languages[language as keyof typeof languages]?.hero.title
+);
+const isArabic = language==="ar";
+
+
+
+const [loading,setLoading]=useState(false);
+
+const [success,setSuccess]=useState(false);
+
+
+
+async function handleSubmit(e:any){
+
+e.preventDefault();
+
+setLoading(true);
+
+
+const form=new FormData(e.target);
+
+
+const res=await fetch("/api/inquiry",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+
+body:JSON.stringify({
+
+name:form.get("name"),
+
+email:form.get("email"),
+
+company:form.get("company"),
+
+message:form.get("message")
+
+})
+
+
+});
+
+
+
+if(res.ok){
+
+setSuccess(true);
+
+e.target.reset();
+
+}
+
+
+setLoading(false);
+
+
+}
+
+
 
 return (
 
+
 <section
+
+dir={isArabic ? "rtl":"ltr"}
+
 className="
 py-28
 bg-slate-950
 text-white
 "
+
+
 >
 
+
 <div
+
 className="
 max-w-7xl
 mx-auto
 px-8
 "
+
+
 >
 
 
 <div
-className="
+
+className={`
 grid
 lg:grid-cols-2
 gap-16
 items-center
-"
+`}
+
+
 >
 
 
-{/* LEFT */}
+{/* TEXT AREA */}
 
-<div>
+
+<div
+
+className={`
+${isArabic ? "lg:order-2 text-right":"lg:order-1 text-left"}
+`}
+
+
+>
 
 
 <p
+
 className="
 text-blue-400
 tracking-[0.3em]
 mb-5
 "
+
+
 >
-CONTACT QLXGEO
+
+{t.contact.title}
+
 </p>
 
 
 
 <h2
+
 className="
 text-5xl
 font-bold
 leading-tight
 "
+
+
 >
 
-Build Your
-<br/>
-Spatial Intelligence Platform
+{t.contact.heading}
 
 </h2>
 
@@ -64,17 +188,17 @@ Spatial Intelligence Platform
 
 
 <p
+
 className="
 mt-8
 text-xl
 text-slate-300
-leading-relaxed
 "
+
+
 >
 
-Partner with QLXGEO for advanced GIS,
-Spatial AI and geospatial intelligence
-solutions.
+{t.contact.description}
 
 </p>
 
@@ -83,14 +207,18 @@ solutions.
 
 
 <div
+
 className="
 mt-10
 space-y-5
 "
+
+
 >
 
 
 <div
+
 className="
 bg-slate-900
 border
@@ -98,33 +226,32 @@ border-white/10
 rounded-2xl
 p-6
 "
+
+
 >
 
-<p
-className="
-text-blue-400
-text-sm
-tracking-widest
-"
->
+<p className="text-blue-400">
+
 EMAIL
+
 </p>
 
-<p
-className="
-mt-3
-text-lg
-"
->
-contact@cqqlx.com
+
+<p className="mt-3">
+
+sales@cqqlx.com
+
 </p>
+
 
 </div>
 
 
 
 
+
 <div
+
 className="
 bg-slate-900
 border
@@ -132,57 +259,24 @@ border-white/10
 rounded-2xl
 p-6
 "
+
+
 >
 
-<p
-className="
-text-blue-400
-text-sm
-tracking-widest
-"
->
-GLOBAL OFFICE
-</p>
 
-<p
-className="
-mt-3
-text-lg
-"
->
-Worldwide GIS Network
-</p>
+<p className="text-blue-400">
 
-</div>
-<div
-className="
-bg-slate-900
-border
-border-white/10
-rounded-2xl
-p-6
-"
->
-
-<p
-className="
-text-blue-400
-text-sm
-tracking-widest
-"
->
 WHATSAPP
+
 </p>
 
 
-<p
-className="
-mt-3
-text-lg
-"
->
+<p className="mt-3">
+
 +86 18983894451
+
 </p>
+
 
 
 <a
@@ -195,17 +289,15 @@ className="
 inline-block
 mt-5
 bg-green-500
-hover:bg-green-600
 px-6
 py-3
 rounded-xl
 font-semibold
-transition
 "
 
 >
 
-Chat on WhatsApp
+WhatsApp
 
 </a>
 
@@ -213,41 +305,57 @@ Chat on WhatsApp
 </div>
 
 
-</div>
-
 
 </div>
 
 
+</div>
 
 
 
-{/* RIGHT */}
 
 
-<div
 
-className="
+
+
+{/* FORM */}
+
+
+<form
+
+
+onSubmit={handleSubmit}
+
+
+dir={isArabic ? "rtl":"ltr"}
+
+
+className={`
 bg-slate-900/80
 border
 border-white/10
 rounded-3xl
 p-8
-shadow-2xl
-"
+${isArabic ? "lg:order-1":"lg:order-2"}
+`}
+
 
 >
 
 
+
 <h3
+
 className="
 text-3xl
 font-bold
 mb-8
 "
+
+
 >
 
-Request Demo
+{t.contact.formTitle}
 
 </h3>
 
@@ -256,18 +364,24 @@ Request Demo
 
 <input
 
+name="name"
+
+required
+
+placeholder={t.contact.name}
+
+
 className="
 w-full
 mb-5
 bg-slate-800
-border
-border-white/10
 rounded-xl
 px-5
 py-4
+text-right
 "
 
-placeholder="Name"
+
 />
 
 
@@ -276,18 +390,24 @@ placeholder="Name"
 
 <input
 
+name="email"
+
+required
+
+placeholder={t.contact.email}
+
+
 className="
 w-full
 mb-5
 bg-slate-800
-border
-border-white/10
 rounded-xl
 px-5
 py-4
+text-right
 "
 
-placeholder="Email"
+
 />
 
 
@@ -296,18 +416,22 @@ placeholder="Email"
 
 <input
 
+name="company"
+
+placeholder={t.contact.company}
+
+
 className="
 w-full
 mb-5
 bg-slate-800
-border
-border-white/10
 rounded-xl
 px-5
 py-4
+text-right
 "
 
-placeholder="Company"
+
 />
 
 
@@ -316,19 +440,23 @@ placeholder="Company"
 
 <textarea
 
+name="message"
+
+placeholder={t.contact.message}
+
+
 className="
 w-full
 mb-5
 bg-slate-800
-border
-border-white/10
 rounded-xl
 px-5
 py-4
 h-32
+text-right
 "
 
-placeholder="Message"
+
 />
 
 
@@ -336,6 +464,11 @@ placeholder="Message"
 
 
 <button
+
+type="submit"
+
+disabled={loading}
+
 
 className="
 w-full
@@ -345,19 +478,57 @@ rounded-xl
 py-4
 text-lg
 font-semibold
-transition
 "
+
 
 >
 
-Submit Request
+
+{
+
+loading
+
+?
+
+t.contact.sending
+
+:
+
+t.contact.submit
+
+}
+
 
 </button>
 
 
 
-</div>
 
+
+{
+
+success &&
+
+
+<p
+
+className="
+mt-5
+text-green-400
+"
+
+>
+
+{t.contact.success}
+
+</p>
+
+
+}
+
+
+
+</form>
 
 
 
@@ -371,5 +542,6 @@ Submit Request
 
 
 );
+
 
 }

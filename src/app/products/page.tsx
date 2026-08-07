@@ -1,64 +1,17 @@
-import type { Metadata } from "next";
-
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Image from "next/image";
+import Link from "next/link";
 
 
-
-export const metadata: Metadata = {
-
-title:
-"Surveying Equipment Supplier | QLXGEO GNSS RTK Total Station",
-
-
-description:
-"QLXGEO provides professional surveying equipment including GNSS RTK receivers, total stations, laser scanners, LiDAR and UAV mapping solutions worldwide.",
-
-
-keywords:[
-
-"GNSS RTK Supplier",
-
-"Total Station Supplier",
-
-"Survey Equipment Manufacturer",
-
-"Laser Scanner Supplier",
-
-"LiDAR Equipment",
-
-"UAV Mapping System"
-
-]
-
-};
-
-
-
-
-
-export default function Products(){
-
-
-
-const products=[
+const products = [
 
 
 {
-title:"GNSS RTK Receiver",
-
-category:"GNSS Positioning",
+title:"Leica GNSS Solutions",
+model:"GS18 / GS16 Series",
+image:"/products/leica-gnss.jpg",
 
 desc:
-"High precision GNSS RTK system for land surveying and mapping.",
-
-features:[
-"Multi constellation GNSS",
-"Centimeter accuracy",
-"4G Bluetooth"
-],
-
-image:"/products/gnss-rtk.jpg",
+"High precision GNSS positioning solutions for professional surveying, construction and mapping applications.",
 
 link:"/products/gnss-rtk"
 
@@ -67,20 +20,12 @@ link:"/products/gnss-rtk"
 
 
 {
-title:"Total Station",
-
-category:"Survey Instrument",
+title:"Leica Total Station Solutions",
+model:"TS16 / TS13 Series",
+image:"/products/leica-total-station.jpg",
 
 desc:
-"Professional electronic total station for engineering and construction.",
-
-features:[
-"High accuracy angle",
-"Reflectorless EDM",
-"Long range measurement"
-],
-
-image:"/products/total-station.jpg",
+"Advanced robotic total station solutions for engineering, infrastructure and professional measurement projects.",
 
 link:"/products/total-station"
 
@@ -88,43 +33,14 @@ link:"/products/total-station"
 
 
 
-{
-title:"3D Laser Scanner",
-
-category:"Reality Capture",
-
-desc:
-"Advanced scanning solution for BIM and 3D mapping.",
-
-features:[
-"Point cloud capture",
-"Fast scanning",
-"BIM workflow"
-],
-
-image:"/products/laser-scanner.jpg",
-
-link:"/products/laser-scanner"
-
-},
-
-
 
 {
-title:"LiDAR System",
-
-category:"3D Mapping",
+title:"Leica 3D Laser Scanning",
+model:"BLK / RTC Series",
+image:"/products/leica-blk.png",
 
 desc:
-"Professional LiDAR solution for surveying and mapping.",
-
-features:[
-"High density data",
-"Large area mapping",
-"3D modeling"
-],
-
-image:"/products/lidar.jpg",
+"Reality capture technology for BIM, digital twin and 3D spatial documentation.",
 
 link:"/products/lidar"
 
@@ -132,69 +48,32 @@ link:"/products/lidar"
 
 
 
-{
-title:"UAV Mapping",
 
-category:"Aerial Survey",
+{
+title:"Leica UAV Mapping Solutions",
+model:"Aerial Mapping Systems",
+image:"/products/leica-uav.png",
 
 desc:
-"Drone mapping system for photogrammetry and surveying.",
-
-features:[
-"RTK positioning",
-"Large coverage",
-"3D reconstruction"
-],
-
-image:"/products/uav.jpg",
+"Professional aerial mapping solutions for large-scale surveying and geospatial projects.",
 
 link:"/products/uav"
-
-},
-
-
-
-{
-title:"Survey Accessories",
-
-category:"Accessories",
-
-desc:
-"Professional accessories for GNSS and total stations.",
-
-features:[
-"Tripods",
-"Prisms",
-"Controllers"
-],
-
-image:"/products/accessories.jpg",
-
-link:"/products/accessories"
 
 }
 
 
-]
+
+];
 
 
 
+
+export default function Products(){
 
 
 return (
 
-<main
-
-className="
-min-h-screen
-bg-slate-950
-text-white
-"
-
->
-
-
-<Navbar />
+<main className="bg-black text-white">
 
 
 
@@ -203,99 +82,55 @@ text-white
 {/* HERO */}
 
 
-
 <section
 
 className="
-pt-40
-pb-24
-max-w-7xl
-mx-auto
 px-8
+lg:px-20
+py-32
+text-center
 "
 
 >
-
-
-<p
-
-className="
-text-blue-400
-tracking-[0.3em]
-"
-
->
-
-QLXGEO PRODUCTS
-
-</p>
-
-
 
 
 <h1
 
 className="
-text-6xl
+text-5xl
+lg:text-6xl
 font-bold
-mt-6
-leading-tight
 "
 
 >
 
-Professional Surveying Equipment
-Solutions
+Leica Geospatial Equipment
 
 </h1>
-
-
 
 
 
 <p
 
 className="
-mt-8
-text-xl
-text-slate-300
+mt-6
+text-gray-400
+text-lg
 max-w-3xl
+mx-auto
 "
 
 >
 
-GNSS RTK, Total Station, Laser Scanner,
-LiDAR and UAV mapping equipment
-for global surveying professionals.
+Professional Leica surveying solutions
+for engineering companies,
+surveying professionals and global projects.
 
 </p>
 
 
 
-
-<a
-
-href="/contact"
-
-className="
-inline-block
-mt-10
-bg-blue-600
-px-10
-py-4
-rounded-xl
-"
-
->
-
-Request Quote
-
-</a>
-
-
-
 </section>
-
 
 
 
@@ -311,39 +146,12 @@ Request Quote
 <section
 
 className="
-bg-white
-text-slate-900
-py-24
-"
-
->
-
-
-<div
-
-className="
-max-w-7xl
-mx-auto
 px-8
+lg:px-20
+pb-28
 "
 
 >
-
-
-<h2
-
-className="
-text-4xl
-font-bold
-"
-
->
-
-Surveying Equipment Categories
-
-</h2>
-
-
 
 
 
@@ -351,9 +159,8 @@ Surveying Equipment Categories
 
 className="
 grid
-md:grid-cols-3
-gap-8
-mt-12
+lg:grid-cols-2
+gap-10
 "
 
 >
@@ -361,28 +168,26 @@ mt-12
 
 {
 
-products.map((item,index)=>(
+
+products.map((item)=>(
 
 
-<a
+<div
 
-key={index}
-
-href={item.link}
+key={item.title}
 
 className="
-group
+bg-zinc-900
 rounded-3xl
-bg-white
-border
-border-slate-200
 overflow-hidden
-hover:shadow-2xl
+border
+border-zinc-800
+hover:border-blue-500
 transition
-duration-300
 "
 
 >
+
 
 
 
@@ -394,30 +199,30 @@ duration-300
 <div
 
 className="
-h-64
-bg-slate-50
-overflow-hidden
+relative
+h-[350px]
+bg-white
 "
 
 >
 
 
-<img
+<Image
 
 src={item.image}
 
 alt={item.title}
 
+fill
+
+sizes="50vw"
+
 className="
-w-full
-h-full
 object-contain
-group-hover:scale-110
-transition
-duration-500
 "
 
 />
+
 
 
 </div>
@@ -441,46 +246,37 @@ p-8
 >
 
 
-
-<p
-
-className="
-text-sm
-text-blue-600
-tracking-widest
-"
-
->
-
-{item.category}
-
-</p>
-
-
-
-
-<h3
+<h2
 
 className="
-text-2xl
+text-3xl
 font-bold
-mt-3
 "
 
 >
 
 {item.title}
 
-</h3>
+</h2>
+<p
+className="
+mt-2
+text-blue-400
+font-semibold
+"
+>
 
+{item.model}
 
+</p>
 
 
 <p
 
 className="
-mt-4
-text-slate-600
+mt-5
+text-gray-400
+leading-relaxed
 "
 
 >
@@ -492,94 +288,26 @@ text-slate-600
 
 
 
+<Link
 
-
-
-<ul
-
-className="
-mt-5
-space-y-2
-text-sm
-text-slate-500
-"
-
->
-
-
-{
-
-item.features.map((feature,i)=>(
-
-
-<li
-
-key={i}
-
->
-
-✓ {feature}
-
-</li>
-
-
-))
-
-}
-
-
-</ul>
-
-
-
-
-
-
-
-
-<div
+href={item.link}
 
 className="
+inline-block
 mt-8
-flex
-gap-5
-"
-
->
-
-
-<span
-
-className="
-text-blue-600
+bg-blue-600
+px-7
+py-3
+rounded-lg
 font-semibold
+hover:bg-blue-700
 "
 
 >
 
-Details →
+Explore Solution →
 
-</span>
-
-
-
-
-<span
-
-className="
-text-green-600
-font-semibold
-"
-
->
-
-Quote
-
-</span>
-
-
-
-</div>
+</Link>
 
 
 
@@ -588,7 +316,7 @@ Quote
 
 
 
-</a>
+</div>
 
 
 
@@ -598,11 +326,9 @@ Quote
 }
 
 
-</div>
-
-
 
 </div>
+
 
 
 </section>
@@ -613,22 +339,21 @@ Quote
 
 
 
-
-
-{/* TRUST */}
+{/* WHY */}
 
 
 
 <section
 
 className="
-py-24
-max-w-7xl
-mx-auto
+bg-zinc-950
 px-8
+lg:px-20
+py-24
 "
 
 >
+
 
 
 <h2
@@ -636,14 +361,14 @@ px-8
 className="
 text-4xl
 font-bold
+text-center
 "
 
 >
 
-Why Choose QLXGEO
+Professional Leica Solutions
 
 </h2>
-
 
 
 
@@ -660,206 +385,114 @@ mt-12
 >
 
 
-<Card
 
-title="Global Supply"
+<div
 
-text="Professional surveying equipment for worldwide customers."
+className="
+bg-zinc-900
+p-8
+rounded-2xl
+"
 
-/>
-
-
-
-<Card
-
-title="OEM / ODM"
-
-text="Customized solutions for different markets."
-
-/>
+>
 
 
+<h3 className="text-xl font-bold">
 
-<Card
+Precision Technology
 
-title="Technical Support"
+</h3>
 
-text="Complete support before and after sales."
 
-/>
+<p className="mt-4 text-gray-400">
 
+High accuracy measurement solutions
+for professional applications.
+
+</p>
 
 
 </div>
 
 
 
-</section>
 
 
-
-
-
-
-
-
-
-{/* CTA */}
-
-
-
-<section
+<div
 
 className="
-bg-blue-600
-py-20
-text-center
+bg-zinc-900
+p-8
+rounded-2xl
 "
 
 >
 
 
-<h2
+<h3 className="text-xl font-bold">
 
-className="
-text-4xl
-font-bold
-"
+Project Support
 
->
-
-Need Surveying Equipment?
-
-</h2>
+</h3>
 
 
+<p className="mt-4 text-gray-400">
 
-<p
-
-className="
-mt-5
-text-xl
-"
-
->
-
-Contact QLXGEO for professional solutions.
+Technical consulting and solution
+recommendations.
 
 </p>
 
 
+</div>
 
 
-<a
 
-href="/contact"
+
+
+<div
 
 className="
-inline-block
-mt-8
-bg-white
-text-blue-600
-px-10
-py-4
-rounded-xl
-font-bold
+bg-zinc-900
+p-8
+rounded-2xl
 "
 
 >
 
-Contact Us
 
-</a>
+<h3 className="text-xl font-bold">
 
+Global Supply
+
+</h3>
+
+
+<p className="mt-4 text-gray-400">
+
+Supporting customers across Asia,
+Middle East and Africa.
+
+</p>
+
+
+</div>
+
+
+
+</div>
 
 
 </section>
 
 
 
-
-
-<Footer />
 
 
 
 </main>
 
+);
 
-)
-
-}
-
-
-
-
-
-
-
-
-
-function Card({
-
-title,
-text
-
-}:{
-
-title:string
-text:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-2xl
-p-8
-"
-
->
-
-
-<h3
-
-className="
-text-xl
-font-bold
-"
-
->
-
-{title}
-
-</h3>
-
-
-
-
-<p
-
-className="
-mt-4
-text-slate-300
-"
-
->
-
-{text}
-
-</p>
-
-
-
-</div>
-
-
-)
 
 }

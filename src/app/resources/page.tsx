@@ -1,17 +1,19 @@
-export default function Solutions(){
+export default function Resources(){
 
 
-const solutions=[
+const resources=[
+
 
 {
-title:"Surveying Solutions",
+title:"Product Brochures",
+
 desc:
-"Professional Leica GNSS and Total Station solutions for land surveying, boundary measurement and engineering projects.",
+"Download Leica surveying equipment brochures and product information.",
 
 items:[
-"High precision positioning",
-"Field data collection",
-"Survey workflow optimization"
+"GNSS Solutions Brochure",
+"Total Station Brochure",
+"3D Laser Scanning Guide"
 ]
 
 },
@@ -19,14 +21,15 @@ items:[
 
 
 {
-title:"Construction Solutions",
+title:"Technical Documents",
+
 desc:
-"Precision measurement technology supporting modern construction projects.",
+"Technical references and specifications for professional users.",
 
 items:[
-"Building layout",
-"Site monitoring",
-"Engineering measurement"
+"Technical Specifications",
+"Application Guides",
+"Workflow Documents"
 ]
 
 },
@@ -34,14 +37,15 @@ items:[
 
 
 {
-title:"Reality Capture Solutions",
+title:"Application Notes",
+
 desc:
-"Advanced Leica 3D scanning technology for digital transformation.",
+"Learn how Leica technology supports different industries.",
 
 items:[
-"3D laser scanning",
-"BIM workflow",
-"Digital twin"
+"Construction Surveying",
+"Infrastructure Projects",
+"Reality Capture Applications"
 ]
 
 },
@@ -49,18 +53,18 @@ items:[
 
 
 {
-title:"Mapping Solutions",
+title:"Project Cases",
+
 desc:
-"Integrated geospatial solutions combining GNSS, UAV and spatial data.",
+"Professional geospatial solutions used in real projects.",
 
 items:[
-"Topographic mapping",
-"Photogrammetry",
-"GIS data processing"
+"Engineering Projects",
+"Mapping Projects",
+"Industrial Applications"
 ]
 
 }
-
 
 
 ];
@@ -97,7 +101,7 @@ font-bold
 
 >
 
-Geospatial Solutions
+Resources
 
 </h1>
 
@@ -115,11 +119,11 @@ mx-auto
 
 >
 
-QLXGEO delivers professional Leica
-geospatial solutions for engineering,
-construction and surveying industries.
+Technical resources, product information
+and professional solutions from QLXGEO.
 
 </p>
+
 
 
 </section>
@@ -129,7 +133,9 @@ construction and surveying industries.
 
 
 
-{/* SOLUTIONS */}
+
+{/* RESOURCE CARDS */}
+
 
 
 <section
@@ -147,7 +153,7 @@ pb-24
 
 className="
 grid
-lg:grid-cols-2
+md:grid-cols-2
 gap-10
 "
 
@@ -156,7 +162,7 @@ gap-10
 
 {
 
-solutions.map((item)=>(
+resources.map((item)=>(
 
 
 <div
@@ -190,7 +196,7 @@ font-bold
 <p
 
 className="
-mt-5
+mt-4
 text-gray-600
 "
 
@@ -214,12 +220,12 @@ space-y-3
 
 {
 
-item.items.map((feature)=>(
+item.items.map((doc)=>(
 
 
 <li
 
-key={feature}
+key={doc}
 
 className="
 border-b
@@ -228,7 +234,7 @@ pb-3
 
 >
 
-✓ {feature}
+{doc}
 
 </li>
 
@@ -252,7 +258,6 @@ pb-3
 
 
 </div>
-
 
 
 </section>
@@ -288,7 +293,7 @@ font-bold
 
 >
 
-Need A Professional Solution?
+Need Technical Information?
 
 </h2>
 
@@ -303,10 +308,11 @@ text-gray-400
 
 >
 
-Talk with QLXGEO technical team
-for your project requirements.
+Contact QLXGEO for product documents
+and professional consulting.
 
 </p>
+
 
 
 
@@ -325,14 +331,13 @@ rounded-lg
 
 >
 
-Contact Us
+Contact Technical Team
 
 </a>
 
 
 
 </section>
-
 
 
 

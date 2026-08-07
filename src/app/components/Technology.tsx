@@ -1,173 +1,124 @@
 "use client";
 
 
-export default function Technology(){
+export default function Technology({
+
+language="en"
+
+}:{
+
+language:string
+
+}){
+
+
+const data:any={
+
+en:{
+
+title:"Geospatial Technology",
+
+desc:"Advanced GNSS RTK, LiDAR and UAV mapping technologies for professional surveying."
+
+},
+
+fr:{
+
+title:"Technologies géospatiales",
+
+desc:"Technologies GNSS RTK, LiDAR et UAV avancées pour les professionnels."
+
+},
+
+es:{
+
+title:"Tecnología Geoespacial",
+
+desc:"Tecnologías avanzadas GNSS RTK, LiDAR y UAV."
+
+},
+
+pt:{
+
+title:"Tecnologia Geoespacial",
+
+desc:"Tecnologias GNSS RTK, LiDAR e UAV avançadas."
+
+},
+
+ar:{
+
+title:"تقنيات المعلومات المكانية",
+
+desc:"تقنيات GNSS RTK و LiDAR والطائرات بدون طيار."
+
+}
+
+};
+
+
+const t=data[language]||data.en;
 
 
 return (
 
-<section
+<main
+
 className="
-py-24
-bg-slate-950
+bg-black
 text-white
+min-h-screen
+pt-32
+px-8
+lg:px-20
 "
+
 >
 
 
 <div
+
 className="
-max-w-7xl
+max-w-6xl
 mx-auto
-px-8
 "
+
 >
 
 
-<p
-className="
-text-blue-400
-tracking-[0.3em]
-"
->
-TECHNOLOGY
-</p>
+<h1
 
-
-<h2
 className="
-mt-5
 text-5xl
 font-bold
 "
->
-Advanced Spatial Technology
-</h2>
 
-
-
-<div
-className="
-grid
-md:grid-cols-3
-gap-8
-mt-14
-"
 >
 
+{t.title}
 
-<div
-className="
-bg-white/10
-rounded-2xl
-p-8
-border
-border-white/10
-"
->
-
-<h3
-className="
-text-2xl
-font-bold
-"
->
-Cloud GIS
-</h3>
+</h1>
 
 
 <p
+
 className="
-mt-4
-text-slate-300
+mt-8
+text-xl
+text-gray-400
 "
+
 >
-Cloud native geospatial infrastructure.
+
+{t.desc}
+
 </p>
 
 
 </div>
 
 
-
-
-<div
-className="
-bg-white/10
-rounded-2xl
-p-8
-border
-border-white/10
-"
->
-
-<h3
-className="
-text-2xl
-font-bold
-"
->
-Spatial AI
-</h3>
-
-
-<p
-className="
-mt-4
-text-slate-300
-"
->
-AI powered location intelligence.
-</p>
-
-
-</div>
-
-
-
-
-
-<div
-className="
-bg-white/10
-rounded-2xl
-p-8
-border
-border-white/10
-"
->
-
-<h3
-className="
-text-2xl
-font-bold
-"
->
-Remote Sensing
-</h3>
-
-
-<p
-className="
-mt-4
-text-slate-300
-"
->
-Satellite imagery analytics.
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
+</main>
 
 );
 

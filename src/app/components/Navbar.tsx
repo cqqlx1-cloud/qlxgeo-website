@@ -1,15 +1,82 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import {usePathname} from "next/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 
 export default function Navbar(){
 
+const pathname = usePathname();
 
-const [productOpen,setProductOpen]=useState(false);
+const language = pathname.split("/")[1] || "en";
 
-const [solutionOpen,setSolutionOpen]=useState(false);
+const isArabic = language==="ar";
+
+
+const menu = [
+
+{
+name:{
+en:"Home",
+es:"Inicio",
+pt:"Início",
+fr:"Accueil",
+ar:"الرئيسية"
+},
+path:"/"
+},
+
+
+{
+name:{
+en:"Products",
+es:"Productos",
+pt:"Produtos",
+fr:"Produits",
+ar:"المنتجات"
+},
+path:"/products"
+},
+
+
+{
+name:{
+en:"Solutions",
+es:"Soluciones",
+pt:"Soluções",
+fr:"Solutions",
+ar:"الحلول"
+},
+path:"/solutions"
+},
+
+
+{
+name:{
+en:"Technology",
+es:"Tecnología",
+pt:"Tecnologia",
+fr:"Technologie",
+ar:"التكنولوجيا"
+},
+path:"/technology"
+},
+
+
+{
+name:{
+en:"Resources",
+es:"Recursos",
+pt:"Recursos",
+fr:"Ressources",
+ar:"الموارد"
+},
+path:"/resources"
+},
+
+
+];
 
 
 
@@ -17,16 +84,17 @@ return (
 
 <nav
 
+dir={isArabic?"rtl":"ltr"}
+
 className="
 fixed
 top-0
 left-0
-w-full
+right-0
 z-50
-bg-slate-950/80
-backdrop-blur-xl
+bg-black
 border-b
-border-white/10
+border-zinc-800
 "
 
 >
@@ -34,30 +102,32 @@ border-white/10
 
 <div
 
-className="
-max-w-7xl
-mx-auto
+className={`
+w-full
 px-8
 h-20
 flex
 items-center
 justify-between
-"
+
+${isArabic?"flex-row-reverse":""}
+
+`}
 
 >
 
 
 {/* LOGO */}
 
-
 <Link
 
-href="/"
+href={`/${language}`}
 
 className="
-text-2xl
+text-3xl
 font-bold
-tracking-widest
+text-blue-500
+tracking-wide
 "
 
 >
@@ -70,323 +140,97 @@ QLXGEO
 
 
 
+{/* MENU */}
 
 
 <div
 
-className="
-flex
+className={`
+hidden
+md:flex
 items-center
-gap-10
-text-sm
-"
+gap-8
+text-gray-300
+
+${isArabic?"flex-row-reverse":""}
+
+`}
 
 >
 
+
+{
+
+menu.map((item)=>(
 
 
 <Link
 
-href="/"
+key={item.path}
+
+href={`/${language}${item.path===" /"?"":item.path}`}
 
 className="
-hover:text-blue-400
+hover:text-white
+transition
 "
 
 >
 
-HOME
+{
+
+item.name[
+language as keyof typeof item.name
+]
+
+||
+
+item.name.en
+
+}
 
 </Link>
 
 
+))
 
 
-
-
-
-
-{/* PRODUCTS */}
-
-
-<div
-
-className="
-relative
-"
-
->
-
-
-<button
-
-onClick={()=>setProductOpen(!productOpen)}
-
-className="
-hover:text-blue-400
-"
-
->
-
-PRODUCTS ▾
-
-</button>
-
-
-
-
-
-{productOpen && (
-
-<div
-
-className="
-absolute
-top-10
-left-0
-w-64
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-4
-shadow-xl
-"
-
->
-
-
-<ProductLink
-
-name="GNSS RTK Receiver"
-
-link="/products/gnss-rtk"
-
-/>
-
-
-
-<ProductLink
-
-name="Total Station"
-
-link="/products/total-station"
-
-/>
-
-
-
-<ProductLink
-
-name="3D Laser Scanner"
-
-link="/products/laser-scanner"
-
-/>
-
-
-
-<ProductLink
-
-name="LiDAR System"
-
-link="/products/lidar"
-
-/>
-
-
-
-<ProductLink
-
-name="UAV Mapping"
-
-link="/products/uav"
-
-/>
-
-
-
-<ProductLink
-
-name="Accessories"
-
-link="/products/accessories"
-
-/>
-
-
-
-</div>
-
-)}
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-{/* SOLUTIONS */}
-
-
-
-<div
-
-className="
-relative
-"
-
->
-
-
-<button
-
-onClick={()=>setSolutionOpen(!solutionOpen)}
-
-className="
-hover:text-blue-400
-"
-
->
-
-SOLUTIONS ▾
-
-</button>
-
-
-
-
-{solutionOpen && (
-
-<div
-
-className="
-absolute
-top-10
-left-0
-w-60
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-4
-shadow-xl
-"
-
->
-
-
-<ProductLink
-
-name="Land Survey"
-
-link="/solutions"
-
-/>
-
-
-<ProductLink
-
-name="Construction"
-
-link="/solutions"
-
-/>
-
-
-<ProductLink
-
-name="GIS Mapping"
-
-link="/solutions"
-
-/>
-
-
-<ProductLink
-
-name="Engineering"
-
-link="/solutions"
-
-/>
-
-
-
-</div>
-
-)}
-
-
-
-</div>
-
-
-
-
-
+}
 
 
 
 
 <Link
 
-href="/technology"
+href={`/${language}/contact`}
 
 className="
-hover:text-blue-400
+bg-blue-600
+text-white
+px-6
+py-3
+rounded-lg
+hover:bg-blue-700
+transition
 "
 
 >
 
-TECHNOLOGY
+{
+
+isArabic
+?
+"اتصل بنا"
+:
+"Contact"
+
+}
 
 </Link>
 
 
 
-
-
-<Link
-
-href="/network"
-
-className="
-hover:text-blue-400
-"
-
->
-
-GLOBAL NETWORK
-
-</Link>
-
-
-
-
-
-<Link
-
-href="/contact"
-
-className="
-hover:text-blue-400
-"
-
->
-
-CONTACT
-
-</Link>
-
-
+<LanguageSwitcher />
 
 
 
@@ -399,52 +243,7 @@ CONTACT
 </nav>
 
 
-)
+);
 
-}
-
-
-
-
-
-
-
-
-function ProductLink({
-
-name,
-link
-
-}:{
-
-name:string
-link:string
-
-}){
-
-
-return (
-
-<Link
-
-href={link}
-
-className="
-block
-px-4
-py-3
-rounded-lg
-hover:bg-white/10
-hover:text-blue-400
-transition
-"
-
->
-
-{name}
-
-</Link>
-
-)
 
 }

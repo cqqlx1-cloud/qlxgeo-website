@@ -1,33 +1,5 @@
-import type { Metadata } from "next";
-
-
-export const metadata: Metadata = {
-
-title:
-"LiDAR System Supplier | QLXGEO Survey Equipment",
-
-
-description:
-"QLXGEO provides professional LiDAR systems for surveying, UAV mapping, 3D data acquisition and large-scale mapping projects worldwide.",
-
-
-keywords:[
-
-"LiDAR System Supplier",
-
-"UAV LiDAR Mapping",
-
-"LiDAR Survey Equipment",
-
-"3D Mapping Solution",
-
-"Laser Mapping System"
-
-]
-
-};
-
-
+import Image from "next/image";
+import Link from "next/link";
 
 
 export default function LiDAR(){
@@ -35,18 +7,7 @@ export default function LiDAR(){
 
 return (
 
-<main
-
-className="
-min-h-screen
-bg-slate-950
-text-white
-pt-32
-px-8
-"
-
->
-
+<main className="bg-black text-white">
 
 
 {/* HERO */}
@@ -55,45 +16,49 @@ px-8
 <section
 
 className="
-max-w-7xl
-mx-auto
+pt-32
+px-8
+lg:px-20
+py-24
 grid
-md:grid-cols-2
-gap-12
+lg:grid-cols-2
+gap-16
 items-center
 "
 
 >
 
 
-
-{/* IMAGE */}
-
-
 <div
 
 className="
-h-[520px]
+relative
+h-[600px]
+bg-zinc-900
 rounded-3xl
-bg-slate-900
-border
-border-white/10
 overflow-hidden
+border
+border-zinc-800
 "
 
 >
 
 
-<img
+<Image
 
-src="/products/lidar.jpg"
+src="/products/lidar.png"
 
-alt="LiDAR System"
+alt="Leica 3D Laser Scanner"
+
+fill
+
+priority
+
+sizes="50vw"
 
 className="
-w-full
-h-full
 object-contain
+p-10
 "
 
 />
@@ -107,27 +72,22 @@ object-contain
 
 
 
-{/* INFO */}
-
-
 <div>
 
 
 <p
 
 className="
-text-blue-400
-tracking-[0.3em]
-text-sm
+text-blue-500
+text-lg
+mb-5
 "
 
 >
 
-SURVEYING EQUIPMENT
+LEICA GEOSPATIAL SOLUTIONS
 
 </p>
-
-
 
 
 
@@ -135,14 +95,15 @@ SURVEYING EQUIPMENT
 
 className="
 text-5xl
+lg:text-6xl
 font-bold
-mt-5
 leading-tight
 "
 
 >
 
-Professional LiDAR System
+Leica 3D Laser
+Scanning Solutions
 
 </h1>
 
@@ -153,17 +114,18 @@ Professional LiDAR System
 <p
 
 className="
-mt-6
+mt-8
+text-gray-400
 text-xl
-text-slate-300
 leading-relaxed
 "
 
 >
 
-Advanced LiDAR mapping solution
-for surveying, UAV mapping,
-3D data acquisition and engineering projects.
+Advanced reality capture solutions
+for BIM, digital twins,
+industrial measurement and
+3D documentation projects.
 
 </p>
 
@@ -171,67 +133,30 @@ for surveying, UAV mapping,
 
 
 
-
-<div
-
-className="
-mt-8
-flex
-gap-4
-"
-
->
-
-
-<a
+<Link
 
 href="/contact"
 
 className="
+inline-block
+mt-10
 bg-blue-600
-px-8
+px-10
 py-4
-rounded-xl
+rounded-lg
+font-semibold
 hover:bg-blue-700
-transition
 "
 
 >
 
-Request Quote
+Request Leica Solution
 
-</a>
-
-
-
-
-
-<a
-
-href="https://wa.me/8618983894451"
-
-className="
-border
-border-green-500
-text-green-400
-px-8
-py-4
-rounded-xl
-"
-
->
-
-WhatsApp
-
-</a>
+</Link>
 
 
 
 </div>
-
-
-</div>
-
 
 
 </section>
@@ -244,16 +169,17 @@ WhatsApp
 
 
 
-{/* FEATURES */}
+{/* OVERVIEW */}
 
 
 
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
+px-8
+lg:px-20
+py-24
+bg-zinc-950
 "
 
 >
@@ -262,69 +188,38 @@ mt-24
 <h2
 
 className="
-text-3xl
+text-4xl
 font-bold
 "
 
 >
 
-Key Features
+01 Overview
 
 </h2>
 
 
 
 
-
-<div
+<p
 
 className="
-grid
-md:grid-cols-2
-gap-6
-mt-8
+mt-6
+max-w-4xl
+text-gray-400
+text-lg
+leading-relaxed
 "
 
 >
 
+QLXGEO provides Leica reality capture
+solutions for professionals requiring
+accurate 3D data acquisition,
+point cloud processing and digital
+project documentation.
 
-<Feature
-
-text="High density point cloud acquisition"
-
-/>
-
-
-
-
-<Feature
-
-text="Large area mapping capability"
-
-/>
-
-
-
-
-<Feature
-
-text="UAV and mobile platform integration"
-
-/>
-
-
-
-
-<Feature
-
-text="Professional 3D data processing workflow"
-
-/>
-
-
-
-</div>
-
+</p>
 
 
 </section>
@@ -344,9 +239,9 @@ text="Professional 3D data processing workflow"
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
+px-8
+lg:px-20
+py-24
 "
 
 >
@@ -355,13 +250,13 @@ mt-24
 <h2
 
 className="
-text-3xl
+text-4xl
 font-bold
 "
 
 >
 
-Technical Specifications
+02 Key Specifications
 
 </h2>
 
@@ -375,80 +270,106 @@ className="
 grid
 md:grid-cols-2
 gap-6
-mt-8
+mt-10
 "
 
 >
 
 
 
-<Spec
-
-name="Laser Type"
-
-value="Professional LiDAR Sensor"
-
-/>
+<div className="bg-zinc-900 p-8 rounded-2xl">
 
 
+<h3 className="text-xl font-bold">
+
+Scanning Technology
+
+</h3>
 
 
-<Spec
+<p className="mt-3 text-gray-400">
 
-name="Scanning Range"
+High accuracy 3D laser scanning
 
-value="Up to Hundreds of Meters"
-
-/>
-
-
-
-
-<Spec
-
-name="Point Density"
-
-value="High Density Point Cloud"
-
-/>
-
-
-
-
-<Spec
-
-name="Accuracy"
-
-value="Centimeter Level Accuracy"
-
-/>
-
-
-
-
-<Spec
-
-name="Data Output"
-
-value="Point Cloud / 3D Model"
-
-/>
-
-
-
-
-<Spec
-
-name="Platform"
-
-value="UAV / Mobile / Ground"
-
-/>
-
+</p>
 
 
 </div>
 
+
+
+
+
+<div className="bg-zinc-900 p-8 rounded-2xl">
+
+
+<h3 className="text-xl font-bold">
+
+Data Output
+
+</h3>
+
+
+<p className="mt-3 text-gray-400">
+
+Point cloud and 3D spatial data
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div className="bg-zinc-900 p-8 rounded-2xl">
+
+
+<h3 className="text-xl font-bold">
+
+Workflow
+
+</h3>
+
+
+<p className="mt-3 text-gray-400">
+
+Reality capture and digital processing
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div className="bg-zinc-900 p-8 rounded-2xl">
+
+
+<h3 className="text-xl font-bold">
+
+Integration
+
+</h3>
+
+
+<p className="mt-3 text-gray-400">
+
+BIM and digital twin applications
+
+</p>
+
+
+</div>
+
+
+
+</div>
 
 
 </section>
@@ -468,9 +389,10 @@ value="UAV / Mobile / Ground"
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
+px-8
+lg:px-20
+py-24
+bg-zinc-950
 "
 
 >
@@ -479,13 +401,13 @@ mt-24
 <h2
 
 className="
-text-3xl
+text-4xl
 font-bold
 "
 
 >
 
-Applications
+03 Applications
 
 </h2>
 
@@ -497,48 +419,41 @@ Applications
 
 className="
 grid
-md:grid-cols-4
+md:grid-cols-3
 gap-6
-mt-8
+mt-10
 "
 
 >
 
 
-<Application
+<div className="bg-zinc-900 p-8 rounded-2xl">
 
-name="UAV Mapping"
+BIM Projects
 
-/>
-
-
-
-<Application
-
-name="Topographic Survey"
-
-/>
+</div>
 
 
 
-<Application
 
-name="Mining"
+<div className="bg-zinc-900 p-8 rounded-2xl">
 
-/>
+Digital Twin
+
+</div>
 
 
 
-<Application
 
-name="Infrastructure"
+<div className="bg-zinc-900 p-8 rounded-2xl">
 
-/>
+Industrial Measurement
+
+</div>
 
 
 
 </div>
-
 
 
 </section>
@@ -551,17 +466,18 @@ name="Infrastructure"
 
 
 
-{/* FAQ */}
+{/* CTA */}
 
 
 
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
-pb-20
+px-8
+lg:px-20
+py-24
+text-center
+bg-zinc-900
 "
 
 >
@@ -570,66 +486,57 @@ pb-20
 <h2
 
 className="
-text-3xl
+text-5xl
 font-bold
 "
 
 >
 
-Frequently Asked Questions
+Need Leica 3D Scanning Solution?
 
 </h2>
 
 
 
 
-
-<div
+<p
 
 className="
-mt-8
-space-y-5
+mt-5
+text-gray-400
 "
 
 >
 
+Contact QLXGEO professional team
+for Leica reality capture solutions.
 
-<FAQ
-
-q="What is LiDAR used for?"
-
-a="LiDAR is widely used for mapping, surveying, 3D modeling and engineering projects."
-
-/>
+</p>
 
 
 
 
 
-<FAQ
+<Link
 
-q="How accurate is LiDAR mapping?"
+href="/contact"
 
-a="Professional LiDAR systems provide high precision 3D measurement and point cloud data."
+className="
+inline-block
+mt-10
+bg-blue-600
+px-10
+py-4
+rounded-lg
+font-semibold
+"
 
-/>
+>
 
+Contact Us
 
+</Link>
 
-
-
-<FAQ
-
-q="Can QLXGEO provide customized solutions?"
-
-a="Yes, QLXGEO supports OEM and customized LiDAR surveying solutions."
-
-/>
-
-
-
-
-</div>
 
 
 
@@ -641,233 +548,7 @@ a="Yes, QLXGEO supports OEM and customized LiDAR surveying solutions."
 
 </main>
 
-)
+);
 
-}
-
-
-
-
-
-
-
-
-
-function Feature({
-
-text
-
-}:{
-
-text:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-"
-
->
-
-✓ {text}
-
-</div>
-
-
-)
-
-}
-
-
-
-
-
-
-
-
-
-function Spec({
-
-name,
-value
-
-}:{
-
-name:string
-value:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-"
-
->
-
-
-<p
-
-className="
-text-blue-400
-"
-
->
-
-{name}
-
-</p>
-
-
-
-<p
-
-className="
-mt-3
-text-lg
-"
-
->
-
-{value}
-
-</p>
-
-
-</div>
-
-)
-
-}
-
-
-
-
-
-
-
-
-
-function Application({
-
-name
-
-}:{
-
-name:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-text-center
-"
-
->
-
-{name}
-
-</div>
-
-
-)
-
-}
-
-
-
-
-
-
-
-
-
-function FAQ({
-
-q,
-a
-
-}:{
-
-q:string
-a:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-"
-
->
-
-
-<h3
-
-className="
-font-bold
-"
-
->
-
-{q}
-
-</h3>
-
-
-
-
-<p
-
-className="
-mt-3
-text-slate-300
-"
-
->
-
-{a}
-
-</p>
-
-
-</div>
-
-
-)
 
 }

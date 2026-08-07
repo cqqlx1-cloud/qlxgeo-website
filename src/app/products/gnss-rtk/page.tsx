@@ -1,182 +1,94 @@
-import InquiryForm from "../../components/InquiryForm";
-import type { Metadata } from "next";
+import Link from "next/link";
 
 
-export const metadata: Metadata = {
-
-title:
-"GNSS RTK Receiver Supplier | QLXGEO Surveying Equipment",
-
-
-description:
-"QLXGEO provides high precision GNSS RTK receivers for land surveying, construction, mapping and engineering projects worldwide.",
-
-
-keywords:[
-
-"GNSS RTK Receiver Supplier",
-
-"RTK GPS Receiver",
-
-"Surveying Equipment Supplier",
-
-"High Precision GNSS",
-
-"RTK Survey Equipment"
-
-]
-
-};
-
-
-
-export default function GNSSRtk(){
+export default function GNSSRTKPage(){
 
 
 return (
 
-<main
-
-className="
-min-h-screen
-bg-slate-950
+<main className="
+bg-black
 text-white
-pt-32
-px-8
-"
-
->
+min-h-screen
+">
 
 
 {/* HERO */}
 
-
 <section
-
 className="
-max-w-7xl
-mx-auto
+pt-32
+px-8
+lg:px-20
 grid
-md:grid-cols-2
-gap-12
+lg:grid-cols-2
+gap-16
 items-center
 "
-
 >
-
-
-{/* IMAGE */}
-
-<div
-
-className="
-h-[520px]
-rounded-3xl
-bg-slate-900
-border
-border-white/10
-overflow-hidden
-"
-
->
-
-
-<img
-
-src="/products/gnss-rtk.jpg"
-
-alt="GNSS RTK Receiver"
-
-className="
-w-full
-h-full
-object-contain
-"
-
-/>
-
-
-</div>
-
-
-
-
-
-{/* INFO */}
 
 
 <div>
 
 
 <p
-
 className="
 text-blue-400
-tracking-[0.3em]
+tracking-[0.4em]
 text-sm
 "
-
 >
-
-SURVEYING EQUIPMENT
-
+LEICA GNSS RTK
 </p>
 
 
 
-
 <h1
-
 className="
 text-5xl
+lg:text-6xl
 font-bold
-mt-5
+mt-6
 leading-tight
 "
-
 >
 
-Professional GNSS RTK Receiver
+High Precision
+GNSS RTK
+Solution
 
 </h1>
 
 
 
-
-
 <p
-
 className="
-mt-6
+mt-8
 text-xl
-text-slate-300
+text-gray-400
 leading-relaxed
 "
-
 >
 
-High precision GNSS RTK positioning system
-for professional surveying, mapping and
-construction applications worldwide.
+Professional Leica GNSS RTK
+positioning solutions for surveying,
+construction, mapping and engineering
+projects worldwide.
 
 </p>
 
 
 
-
-
 <div
-
 className="
-mt-8
+mt-10
 flex
-gap-4
+gap-5
 "
-
 >
 
 
-<a
+<Link
 
 href="/contact"
 
@@ -185,16 +97,14 @@ bg-blue-600
 px-8
 py-4
 rounded-xl
-hover:bg-blue-700
-transition
+font-semibold
 "
 
 >
 
 Request Quote
 
-</a>
-
+</Link>
 
 
 
@@ -202,13 +112,14 @@ Request Quote
 
 href="https://wa.me/8618983894451"
 
+target="_blank"
+
 className="
-border
-border-green-500
-text-green-400
+bg-green-500
 px-8
 py-4
 rounded-xl
+font-semibold
 "
 
 >
@@ -226,9 +137,44 @@ WhatsApp
 </div>
 
 
+
+
+
+{/* IMAGE */}
+
+
+<div
+
+className="
+bg-zinc-900
+rounded-3xl
+border
+border-white/10
+p-10
+"
+
+>
+
+
+<img
+
+src="/products/leica-gnss.jpg"
+
+alt="Leica GNSS RTK"
+
+className="
+w-full
+object-contain
+"
+
+/>
+
+
+</div>
+
+
+
 </section>
-
-
 
 
 
@@ -239,25 +185,22 @@ WhatsApp
 {/* FEATURES */}
 
 
-
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
+px-8
+lg:px-20
+py-24
 "
 
 >
 
 
 <h2
-
 className="
-text-3xl
+text-4xl
 font-bold
 "
-
 >
 
 Key Features
@@ -266,154 +209,72 @@ Key Features
 
 
 
-
 <div
 
 className="
 grid
 md:grid-cols-2
+lg:grid-cols-4
 gap-6
-mt-8
+mt-12
 "
 
 >
 
 
-<Feature
-text="Multi constellation GNSS support"
-/>
+{
 
 
-<Feature
-text="Centimeter-level RTK accuracy"
-/>
+[
+"Centimeter Accuracy",
+"Multi-Band GNSS",
+"RTK Network Support",
+"Professional Surveying"
+]
+
+.map((item)=>(
 
 
-<Feature
-text="4G LTE Bluetooth WiFi communication"
-/>
+<div
 
-
-<Feature
-text="Professional field controller support"
-/>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-{/* SPECIFICATIONS */}
-
-
-
-<section
+key={item}
 
 className="
-max-w-7xl
-mx-auto
-mt-24
+bg-zinc-900
+border
+border-white/10
+rounded-2xl
+p-8
 "
 
 >
 
 
-<h2
-
+<h3
 className="
-text-3xl
+text-xl
 font-bold
 "
-
 >
 
-Technical Specifications
+✓ {item}
 
-</h2>
-
-
+</h3>
 
 
-<div
-
-className="
-grid
-md:grid-cols-2
-gap-6
-mt-8
-"
-
->
+</div>
 
 
-<Spec
-
-name="Positioning Accuracy"
-
-value="RTK ±8mm + 1ppm"
-
-/>
+))
 
 
-<Spec
-
-name="Channels"
-
-value="1408 Channels"
-
-/>
-
-
-<Spec
-
-name="Satellite Systems"
-
-value="GPS GLONASS Galileo BeiDou"
-
-/>
-
-
-<Spec
-
-name="Communication"
-
-value="4G LTE Bluetooth WiFi"
-
-/>
-
-
-<Spec
-
-name="Operating Time"
-
-value="12+ Hours"
-
-/>
-
-
-<Spec
-
-name="Protection"
-
-value="IP67 Waterproof"
-
-/>
+}
 
 
 </div>
 
 
 </section>
-
 
 
 
@@ -425,13 +286,13 @@ value="IP67 Waterproof"
 {/* APPLICATIONS */}
 
 
-
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
+px-8
+lg:px-20
+py-24
+bg-zinc-950
 "
 
 >
@@ -440,7 +301,7 @@ mt-24
 <h2
 
 className="
-text-3xl
+text-4xl
 font-bold
 "
 
@@ -452,34 +313,57 @@ Applications
 
 
 
-
 <div
 
 className="
 grid
-md:grid-cols-4
+md:grid-cols-2
+lg:grid-cols-4
 gap-6
-mt-8
+mt-12
 "
 
 >
 
 
-<Application name="Land Survey"/>
+{
+
+[
+"Construction Survey",
+"Land Surveying",
+"GIS Mapping",
+"Infrastructure Projects"
+
+].map(item=>(
 
 
-<Application name="Construction"/>
+<div
+
+key={item}
+
+className="
+bg-black
+border
+border-white/10
+rounded-xl
+p-6
+"
+
+>
+
+{item}
+
+</div>
 
 
-<Application name="GIS Mapping"/>
+))
 
 
-<Application name="Infrastructure"/>
+}
 
 
 
 </div>
-
 
 
 </section>
@@ -491,18 +375,16 @@ mt-8
 
 
 
-
-{/* FAQ */}
+{/* SPECIFICATION */}
 
 
 
 <section
 
 className="
-max-w-7xl
-mx-auto
-mt-24
-pb-20
+px-8
+lg:px-20
+py-24
 "
 
 >
@@ -511,13 +393,14 @@ pb-20
 <h2
 
 className="
-text-3xl
+text-4xl
 font-bold
+mb-10
 "
 
 >
 
-Frequently Asked Questions
+Technical Specification
 
 </h2>
 
@@ -527,43 +410,164 @@ Frequently Asked Questions
 <div
 
 className="
-mt-8
-space-y-5
+max-w-4xl
+border
+border-white/10
+rounded-2xl
+overflow-hidden
 "
 
 >
 
 
-<FAQ
+{
 
-q="What accuracy can GNSS RTK achieve?"
+[
 
-a="Professional GNSS RTK receivers can achieve centimeter-level positioning accuracy."
+["GNSS","GPS / GLONASS / Galileo / BeiDou"],
 
-/>
+["Accuracy","RTK centimeter level"],
 
+["Communication","4G / Bluetooth"],
 
+["Application","Professional Surveying"]
 
-
-<FAQ
-
-q="Which satellite systems are supported?"
-
-a="GPS, GLONASS, Galileo and BeiDou satellite systems are supported."
-
-/>
+].map(row=>(
 
 
+<div
+
+key={row[0]}
+
+className="
+grid
+grid-cols-2
+border-b
+border-white/10
+p-5
+"
+
+>
 
 
-<FAQ
+<div
+className="
+font-bold
+"
+>
 
-q="Can QLXGEO provide OEM solutions?"
+{row[0]}
 
-a="Yes, QLXGEO supports OEM and customized surveying equipment solutions."
+</div>
 
-/>
 
+
+<div
+className="
+text-gray-400
+"
+>
+
+{row[1]}
+
+</div>
+
+
+
+</div>
+
+
+))
+
+
+}
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+{/* CTA */}
+
+
+<section
+
+className="
+px-8
+lg:px-20
+py-24
+bg-blue-600
+"
+
+>
+
+
+<div
+className="
+max-w-5xl
+mx-auto
+text-center
+"
+>
+
+
+<h2
+
+className="
+text-4xl
+font-bold
+"
+
+>
+
+Need Leica GNSS RTK Solution?
+
+</h2>
+
+
+
+<p
+
+className="
+mt-5
+text-lg
+"
+
+>
+
+Contact QLXGEO for quotation,
+technical support and global supply.
+
+</p>
+
+
+
+<Link
+
+href="/contact"
+
+className="
+inline-block
+mt-8
+bg-black
+px-10
+py-4
+rounded-xl
+font-semibold
+"
+
+>
+
+Request Quote
+
+</Link>
 
 
 
@@ -573,241 +577,11 @@ a="Yes, QLXGEO supports OEM and customized surveying equipment solutions."
 </section>
 
 
-<InquiryForm />
 
 
 </main>
 
+);
 
-)
-
-}
-
-
-
-
-
-
-
-
-
-function Feature({
-
-text
-
-}:{
-
-text:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-"
-
->
-
-✓ {text}
-
-</div>
-
-
-)
-
-}
-
-
-
-
-
-
-
-
-
-function Spec({
-
-name,
-value
-
-}:{
-
-name:string
-value:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-"
-
->
-
-
-<p
-
-className="
-text-blue-400
-"
-
->
-
-{name}
-
-</p>
-
-
-
-<p
-
-className="
-mt-3
-text-lg
-"
-
->
-
-{value}
-
-</p>
-
-
-
-</div>
-
-
-)
-
-}
-
-
-
-
-
-
-
-
-
-function Application({
-
-name
-
-}:{
-
-name:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-text-center
-"
-
->
-
-{name}
-
-</div>
-
-
-)
-
-}
-
-
-
-
-
-
-
-
-
-function FAQ({
-
-q,
-a
-
-}:{
-
-q:string
-a:string
-
-}){
-
-
-return (
-
-<div
-
-className="
-bg-slate-900
-border
-border-white/10
-rounded-xl
-p-6
-"
-
->
-
-
-<h3
-
-className="
-font-bold
-"
-
->
-
-{q}
-
-</h3>
-
-
-
-<p
-
-className="
-mt-3
-text-slate-300
-"
-
->
-
-{a}
-
-</p>
-
-
-
-</div>
-
-
-)
 
 }
